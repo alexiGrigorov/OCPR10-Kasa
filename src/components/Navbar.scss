@@ -1,0 +1,13 @@
+/* Menu.css */
+
+.navbar ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/* Normal link styling */
+.navbar-item a {
+  text-decoration: none;
+  color: var(--clr-neutral-900);
+}
