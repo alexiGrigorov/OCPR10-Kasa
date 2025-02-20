@@ -1,0 +1,213 @@
+/* --------------------------------------------------
+   Layout Utilities
+-------------------------------------------------- */
+/* Display & Positioning */
+.d-grid {
+  display: grid;
+}
+
+.d-flex {
+  display: flex;
+}
+
+/* Sizing */
+.min-h-screen {
+  min-height: 100vh;
+}
+
+.max-w-screen {
+  width: 100%;
+  max-width: var(--vw-max);
+}
+
+/* Overflow */
+/* Example:
+   .overflow-hidden { overflow: hidden; }
+   .overflow-auto { overflow: auto; }
+*/
+
+/* --------------------------------------------------
+   Spacing Utilities
+-------------------------------------------------- */
+/* Margin */
+.m-auto {
+  margin: auto;
+}
+
+/* Padding */
+
+/* Gap (for flex and grid layouts) */
+.gap-5 {
+  gap: 1.25rem;
+}
+
+/* --------------------------------------------------
+   Typography Utilities
+-------------------------------------------------- */
+/* Font */
+/* Example:
+   .font-sans { font-family: sans-serif; }
+   .font-serif { font-family: serif; }
+   .font-mono { font-family: monospace; }
+*/
+
+/* Font Size */
+
+/* Font Weight */
+.text-regular {
+  font-weight: 400;
+}
+
+.text-medium {
+  font-weight: 500;
+}
+
+.text-bold {
+  font-weight: 700;
+}
+
+/* Text Color */
+.text-primary {
+  color: var(--clr-primary);
+}
+
+.text-neutral-100 {
+  color: var(--clr-neutral-100);
+}
+
+.text-neutral-900 {
+  color: var(--clr-neutral-900);
+}
+
+/* Text Decoration */
+.text-decoration-none {
+  text-decoration: none;
+}
+
+.text-decoration-underline {
+  text-decoration: underline;
+}
+
+/* Text Align */
+.text-center {
+  text-align: center;
+}
+
+/* Text Wrap */
+.text-balance {
+  text-wrap: balance;
+}
+
+/* --------------------------------------------------
+   Color & Background Utilities
+-------------------------------------------------- */
+/* Background */
+.bg-primary {
+  background-color: var(--clr-primary);
+}
+
+.bg-neutral-100 {
+  background-color: var(--clr-neutral-100);
+}
+
+.bg-neutral-200 {
+  background-color: var(--clr-neutral-200);
+}
+
+.bg-neutral-900 {
+  background-color: var(--clr-neutral-900);
+}
+
+/* Background Image & Other */
+/* Example:
+   .bg-cover { background-size: cover; }
+   .bg-center { background-position: center; }
+*/
+
+/* --------------------------------------------------
+   Border & Outline Utilities
+-------------------------------------------------- */
+/* Borders */
+/* Example:
+   .border { border: 1px solid #dee2e6; }
+   .border-none { border: none; }
+*/
+
+/* Border Radius */
+
+.rounded-10 {
+  border-radius: 10px;
+}
+.rounded-25 {
+  border-radius: 25px;
+}
+
+/* Outline */
+/* Example:
+   .outline-none { outline: none; }
+*/
+
+/* --------------------------------------------------
+   Flexbox & Grid Utilities
+-------------------------------------------------- */
+/* Flexbox */
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-space-between {
+  justify-content: space-between;
+}
+
+.flex-align-center {
+  align-items: center;
+}
+
+/* Grid */
+.grid-hmf {
+  grid-template-rows:
+    auto
+    1fr
+    auto;
+}
+
+.grid-center {
+  justify-items: center;
+}
+
+/* --------------------------------------------------
+   Effects & Animation Utilities
+-------------------------------------------------- */
+/* Shadows & Opacity */
+/* Example:
+   .shadow { box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); }
+   .opacity-50 { opacity: 0.5; }
+*/
+
+/* Transforms & Transitions */
+/* Example:
+   .transition { transition: all 0.3s ease; }
+   .transform-scale { transform: scale(1.05); }
+*/
+
+/* Filters */
+/* Example:
+   .filter-blur { filter: blur(4px); }
+*/
+
+/* --------------------------------------------------
+   Interaction & Visibility Utilities
+-------------------------------------------------- */
+/* Visibility */
+/* Example:
+   .hidden { display: none; }
+   .visible { visibility: visible; }
+*/
+
+/* User Interaction */
+/* Example:
+   .cursor-pointer { cursor: pointer; }
+   .select-none { user-select: none; }
+*/
+
+/* States */

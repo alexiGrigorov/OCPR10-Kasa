@@ -1,15 +1,14 @@
-import Icon from "../components/Icon";
-import Logo from "../assets/svgs/logo.svg?react";
+import SecondaryLogo from "./SecondaryLogo";
 
-export default function Footer() {
+function Footer() {
   return (
-    <footer className="bg-black full-width">
-      <Icon
-        svg={<Logo />}
-        width="var(--space-3xl)"
-        color="var(--clr-neutral-100)"
-      />
-      <p>&copy; 2020 Kasa. All rights reserved</p>
+    <footer className="d-flex gap-5 flex-align-center flex-column m-bs-footer p-bs-footer p-be-footer text-neutral-100 bg-neutral-900">
+      <SecondaryLogo />
+      <p className="font-size-f text-medium text-center text-balance footer-text">
+        © 2020 Kasa. All rights reserved
+      </p>
     </footer>
   );
 }
+
+export default Footer;

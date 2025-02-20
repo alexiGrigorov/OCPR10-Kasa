@@ -1,17 +1,13 @@
-import Icon from "../components/Icon";
-import Logo from "../assets/svgs/logo.svg?react";
-
+import MainLogo from "./MainLogo";
 import MainNavigation from "./MainNavigation";
 
-export default function Header({ current }) {
+function Header() {
   return (
-    <header className="space-between">
-      <Icon
-        svg={<Logo />}
-        width="var(--space-4xl)"
-        color="var(--clr-primary)"
-      />
-      <MainNavigation current={current} />
+    <header className="max-w-screen m-auto m-bs-header m-be-header p-i-header d-flex flex-space-between flex-align-center">
+      <MainLogo />
+      <MainNavigation />
     </header>
   );
 }
+
+export default Header;

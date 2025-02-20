@@ -1,12 +1,11 @@
-import Header from "../ui/Header.jsx";
-import Footer from "../ui/Footer.jsx";
+import AboutBanner from "../ui/AboutBanner";
 
-export default function About() {
+function About() {
   return (
-    <>
-      <Header current="about" />
-      <h1>About</h1>
-      <Footer />
-    </>
+    <main className="max-w-screen m-auto p-i-pages">
+      <AboutBanner />
+    </main>
   );
 }
+
+export default About;

@@ -1,16 +1,19 @@
-// MainMenu.jsx
-import { Navbar, NavbarItem } from "../components/Navbar";
-import "./MainNavigation.scss";
+import { NavLink } from "react-router-dom";
 
-export default function NavbarMenu({ current }) {
+import Navigation from "../components/Navigation";
+
+function MainNavigation() {
   return (
-    <Navbar customClass="main-navigation">
-      <NavbarItem href="/" current={current === "home"}>
-        Accueil
-      </NavbarItem>
-      <NavbarItem href="/a-propos" current={current === "about"}>
-        A Propos
-      </NavbarItem>
-    </Navbar>
+    <Navigation
+      ulClassName="d-flex gap-menu text-medium font-size-h"
+      linkClassName="text-neutral-900"
+      activeClassName="text-decoration-underline"
+      inactiveClassName="text-decoration-none"
+    >
+      <NavLink to="/">Accueil</NavLink>
+      <NavLink to="/a-propos">A Propos</NavLink>
+    </Navigation>
   );
 }
+
+export default MainNavigation;

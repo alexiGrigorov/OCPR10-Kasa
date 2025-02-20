@@ -1,9 +1,11 @@
-import ReactDOM from "react-dom/client";
-import "./scss/main.scss";
+import { createRoot } from "react-dom/client";
 
 import App from "./App";
 
+import "./styles/style.scss";
+
 const rootElement = document.getElementById("root");
-rootElement.classList.add("site", "wrapper-grid");
-const root = ReactDOM.createRoot(rootElement);
+rootElement.classList.add("grid-hmf", "d-grid", "min-h-screen");
+const root = createRoot(rootElement);
+
 root.render(<App />);

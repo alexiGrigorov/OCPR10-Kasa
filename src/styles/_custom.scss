@@ -1,0 +1,113 @@
+$breakpoint: 720px;
+
+/* --------------------------------------------------
+   pages
+-------------------------------------------------- */
+.p-i-pages {
+  padding-inline: clamp(20px, calc(7.5117vw + -8.169px), 100px);
+}
+
+/***    Home    ***/
+.slogan-text {
+  margin-inline: auto;
+}
+
+.font-size-slogan {
+  font-size: clamp(24px, calc(2.2535vw + 15.5493px), 48px);
+}
+
+.rentals-preview {
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(10px, calc(4.6948vw + -7.6056px), 60px);
+  margin-block-start: clamp(22px, calc(1.9718vw + 14.6056px), 43px);
+  background-color: var(--clr-neutral-200);
+  padding: clamp(0px, calc(6.9444vw + -50px), 50px);
+}
+
+/***    Error    ***/
+.gap-error {
+  gap: clamp(113px, calc(2.4413vw + 103.8451px), 139px);
+}
+
+.font-size-error-title {
+  font-size: clamp(96px, calc(18.0282vw + 28.3944px), 288px);
+}
+
+.font-size-error-message {
+  font-size: clamp(18px, calc(1.6901vw + 11.662px), 36px);
+}
+
+.font-size-error-link {
+  font-size: clamp(14px, calc(0.3756vw + 12.5915px), 18px);
+}
+
+/* --------------------------------------------------
+   ui
+-------------------------------------------------- */
+/****    Header    ****/
+.m-bs-header {
+  margin-block-start: clamp(20px, calc(2.3474vw + 11.1972px), 45px);
+}
+
+.m-be-header {
+  margin-block-end: clamp(27px, calc(2.1596vw + 18.9014px), 50px);
+}
+
+.p-i-header {
+  padding-inline: clamp(20px, calc(7.5117vw + -8.169px), 100px);
+}
+
+.font-size-h {
+  font-size: clamp(12px, calc(1.1268vw + 7.7746px), 24px);
+}
+
+/****    MainLogo    ****/
+.main-logo {
+  width: clamp(145px, calc(6.1033vw + 122.1127px), 210px);
+}
+
+/****    MainNavigation    ****/
+.gap-menu {
+  gap: clamp(26px, calc(2.9108vw + 15.0845px), 57px);
+}
+
+/****    Footer    ****/
+.m-bs-footer {
+  margin-block-start: clamp(27px, calc(2.1596vw + 18.9014px), 50px);
+}
+
+.p-bs-footer {
+  padding-block-start: clamp(66px, calc(6.385vw + 42.0563px), 134px);
+}
+
+.p-be-footer {
+  padding-block-end: clamp(29px, calc(-2.723vw + 68.2113px), 58px);
+}
+
+.font-size-f {
+  font-size: clamp(12px, calc(1.1268vw + 7.7746px), 24px);
+}
+
+/****    SecondaryLogo    ****/
+.secondary-logo {
+  width: 127px;
+  display: none;
+}
+
+@media (max-width: #{$breakpoint}) {
+  .slogan-text {
+    margin-inline: 16px;
+  }
+  .rentals-preview {
+    grid-template-columns: 1fr;
+    background-color: var(--clr-neutral-100);
+  }
+
+  .secondary-logo {
+    display: block;
+  }
+
+  .footer-text {
+    width: 127px;
+  }
+}
