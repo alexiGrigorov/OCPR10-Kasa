@@ -1,4 +1,4 @@
-import React from "react";
+import { Children, cloneElement } from "react";
 import { NavLink } from "react-router-dom";
 
 function Navigation({
@@ -12,7 +12,7 @@ function Navigation({
   return (
     <nav {...rest}>
       <ul className={ulClassName}>
-        {React.Children.map(children, (child) => {
+        {Children.map(children, (child) => {
           const newProps =
             child.type === NavLink
               ? {
@@ -21,7 +21,7 @@ function Navigation({
                 }
               : { className: linkClassName };
 
-          return <li>{React.cloneElement(child, newProps)}</li>;
+          return <li>{cloneElement(child, newProps)}</li>;
         })}
       </ul>
     </nav>

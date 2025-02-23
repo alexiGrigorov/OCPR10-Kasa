@@ -16,7 +16,7 @@ function Rental() {
   console.log(rental);
 
   return (
-    <main className="max-w-screen m-auto p-i-pages">
+    <main className="max-w-screen m-inline-auto p-i-pages">
       <h1>Logement {id}</h1>
     </main>
   );
