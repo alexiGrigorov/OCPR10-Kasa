@@ -7,7 +7,7 @@ function Home() {
   const rentalsData = useRouteLoaderData("mainApp");
 
   return (
-    <main className="max-w-screen m-inline-auto p-i-pages">
+    <main className="max-w-screen m-i-auto p-i-pages">
       <HomeBanner />
       <RentalsPreview rentalsData={rentalsData} />
     </main>

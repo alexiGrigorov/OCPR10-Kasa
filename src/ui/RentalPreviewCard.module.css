@@ -8,7 +8,7 @@
     [ img-start] 1fr
     [title-start] auto
     [title-end img-end];
-  width: clamp(335px, calc(0.4695vw + 333.2394px), 340px);
+  max-width: clamp(335px, calc(0.4695vw + 333.2394px), 340px);
   height: clamp(255px, calc(7.9812vw + 225.0704px), 340px);
 }
 

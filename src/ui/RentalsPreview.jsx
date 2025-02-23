@@ -21,7 +21,7 @@ function RentalPreviewCard({ rental }) {
 
 function RentalsPreview({ rentalsData }) {
   return (
-    <div className="rentals-preview d-grid grid-center rounded-25 ">
+    <div className="rentals-preview d-grid grid-center rounded-25 gap-rentals-preview m-bs-rentals-preview p-rentals-preview">
       {rentalsData.map((rental) => (
         <Link
           to={`logement/${rental.id}`}

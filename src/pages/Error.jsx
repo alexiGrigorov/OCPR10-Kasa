@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function Error() {
   return (
-    <main className=" d-flex flex-column gap-error flex-align-center max-w-screen m-inline-auto p-i-pages">
+    <main className=" d-flex flex-column gap-error flex-align-center max-w-screen m-i-auto p-i-pages">
       <h1 className="error-title text-primary text-bold font-size-error-title">
         404
       </h1>

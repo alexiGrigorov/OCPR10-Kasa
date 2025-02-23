@@ -30,8 +30,12 @@
    Spacing Utilities
 -------------------------------------------------- */
 /* Margin */
-.m-inline-auto {
+.m-i-auto {
   margin-inline: auto;
+}
+
+.m-is-3 {
+  margin-inline-start: 0.75rem;
 }
 
 /* Padding */
@@ -39,7 +43,15 @@
   padding: 1rem;
 }
 
+.p-inline-4 {
+  padding: 1rem;
+}
+
 /* Gap (for flex and grid layouts) */
+.gap-2 {
+  gap: 0.5rem;
+}
+
 .gap-5 {
   gap: 1.25rem;
 }
@@ -96,6 +108,10 @@
   text-align: center;
 }
 
+.text-right {
+  text-align: right;
+}
+
 /* Text Wrap */
 .text-balance {
   text-wrap: balance;
@@ -149,6 +165,10 @@
   border-radius: 25px;
 }
 
+.rounded-circle {
+  border-radius: 50%;
+}
+
 /* Outline */
 /* Example:
    .outline-none { outline: none; }
@@ -166,8 +186,20 @@
   justify-content: space-between;
 }
 
+.flex-end {
+  justify-content: flex-end;
+}
+
 .flex-align-center {
   align-items: center;
+}
+
+.flex-align-end {
+  align-items: flex-end;
+}
+
+.flex-basis-50 {
+  flex-basis: 50%;
 }
 
 /* Grid */
@@ -201,6 +233,17 @@
 /* Example:
    .filter-blur { filter: blur(4px); }
 */
+
+/* Badges */
+.badge {
+  padding-block: 0.5em;
+  padding-inline: 2em;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.5rem;
+}
 
 /* --------------------------------------------------
    Interaction & Visibility Utilities
