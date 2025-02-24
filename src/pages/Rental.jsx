@@ -2,6 +2,7 @@ import { useParams, useRouteLoaderData } from "react-router-dom";
 
 import { throwNotFoundResponse } from "../utils/httpResponses";
 
+import Carousel from "../components/Carousel";
 import Host from "../ui/Host";
 import Rating from "../ui/Rating";
 import ExpendableDetails from "../ui/ExpendableDetails";
@@ -18,9 +19,11 @@ function Rental() {
 
   return (
     <main className="max-w-screen m-i-auto p-i-pages">
-      <div id="carousel" className="grid-rental-carousel">
-        carousel
-      </div>
+      <Carousel className={"h-rental-carousel"}>
+        {rental.pictures.map((picture) => (
+          <img key={picture} src={picture} alt={rental.title} />
+        ))}
+      </Carousel>
 
       <div className="d-flex flex-space-between rental-overview">
         <div className="rental-summary m-bs-rental-summary">

@@ -38,6 +38,10 @@ $breakpoint: 720px;
   flex-direction: row;
 }
 
+.h-rental-carousel {
+  height: clamp(255px, calc(15.0235vw + 198.662px), 415px);
+}
+
 .m-bs-rental-summary {
   margin-block-start: clamp(15px, calc(1.4085vw + 9.7183px), 30px);
 }
