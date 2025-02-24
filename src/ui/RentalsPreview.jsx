@@ -6,7 +6,7 @@ function RentalPreviewCard({ rental }) {
   return (
     <div className={`${CSS.rentalPreviewCard} rounded-10`}>
       <h3
-        className={`${CSS.rentalPreviewCardTitle} text-bold text-neutral-100`}
+        className={`${CSS.rentalPreviewCardTitle} font-bold text-neutral-100`}
       >
         {rental.title}
       </h3>
@@ -21,12 +21,12 @@ function RentalPreviewCard({ rental }) {
 
 function RentalsPreview({ rentalsData }) {
   return (
-    <div className="rentals-preview d-grid grid-center rounded-25 gap-rentals-preview m-bs-rentals-preview p-rentals-preview">
+    <div className="rentals-preview grid justify-items-center rounded-25 gap-rentals-preview m-bs-rentals-preview p-rentals-preview">
       {rentalsData.map((rental) => (
         <Link
           to={`logement/${rental.id}`}
           key={rental.id}
-          className="text-decoration-none"
+          className="no-underline"
         >
           <RentalPreviewCard rental={rental} />
         </Link>

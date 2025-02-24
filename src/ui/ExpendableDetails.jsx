@@ -14,7 +14,7 @@ function ExpendableDetails({ title, children, className }) {
           className="open-close-icon"
         />
       }
-      titleClassName="d-flex flex-align-center flex-space-between p-inline-4 p-b-extendable-details-content text-neutral-100 text-bold bg-primary rounded-5 font-size-expendable-title"
+      titleClassName="flex items-center justify-between pi-4 p-b-extendable-details-content text-neutral-100 font-bold bg-primary rounded-5 font-size-expendable-title"
       contentClassName="p-4"
       className={className}
     >

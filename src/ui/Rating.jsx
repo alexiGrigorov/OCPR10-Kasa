@@ -5,7 +5,7 @@ function Rating({ rating, className }) {
   const totalStars = 5;
 
   return (
-    <div className={`d-flex ${className}`}>
+    <div className={`flex ${className}`}>
       {Array.from({ length: totalStars }, (_, index) => {
         const starColor =
           index < rating ? "var(--clr-primary)" : "var(--clr-neutral-300)";

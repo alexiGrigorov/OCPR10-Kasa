@@ -3,7 +3,7 @@ import MainNavigation from "./MainNavigation";
 
 function Header() {
   return (
-    <header className="max-w-screen m-i-auto m-bs-header m-be-header p-i-header d-flex flex-space-between flex-align-center">
+    <header className="max-w-screen w-full mi-auto m-bs-header m-be-header p-i-header flex justify-between items-center">
       <MainLogo />
       <MainNavigation />
     </header>

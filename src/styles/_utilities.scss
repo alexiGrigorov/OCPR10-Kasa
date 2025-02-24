@@ -1,64 +1,41 @@
-/* --------------------------------------------------
-   Layout Utilities
--------------------------------------------------- */
-/* Display & Positioning */
-.d-grid {
+/* Layout & Positioning Utilities */
+.grid {
   display: grid;
 }
-
-.d-flex {
+.flex {
   display: flex;
 }
-
-/* Sizing */
 .min-h-screen {
   min-height: 100vh;
 }
-
 .max-w-screen {
-  width: 100%;
   max-width: var(--vw-max);
 }
-
-.w-100 {
+.w-full {
   width: 100%;
 }
-
-.h-100 {
+.h-full {
   height: 100%;
 }
-
 .object-cover {
   object-fit: cover;
 }
-
-/* Overflow */
-/* Example:
-  
-   .overflow-auto { overflow: auto; }
-*/
-
 .overflow-hidden {
   overflow: hidden;
 }
-
-.position-relative {
+.relative {
   position: relative;
 }
-
-.position-absolute {
+.absolute {
   position: absolute;
 }
 
-/* --------------------------------------------------
-   Spacing Utilities
--------------------------------------------------- */
+/* Spacing Utilities */
 /* Margin */
-.m-i-auto {
+.mi-auto {
   margin-inline: auto;
 }
-
-.m-is-3 {
+.mis-3 {
   margin-inline-start: 0.75rem;
 }
 
@@ -66,42 +43,27 @@
 .p-4 {
   padding: 1rem;
 }
-
-.p-inline-4 {
+.pi-4 {
   padding: 1rem;
 }
 
-/* Gap (for flex and grid layouts) */
+/* Gap */
 .gap-2 {
   gap: 0.5rem;
 }
-
 .gap-5 {
   gap: 1.25rem;
 }
 
-/* --------------------------------------------------
-   Typography Utilities
--------------------------------------------------- */
-/* Font */
-/* Example:
-   .font-sans { font-family: sans-serif; }
-   .font-serif { font-family: serif; }
-   .font-mono { font-family: monospace; }
-*/
-
-/* Font Size */
-
+/* Typography Utilities */
 /* Font Weight */
-.text-regular {
+.font-normal {
   font-weight: 400;
 }
-
-.text-medium {
+.font-medium {
   font-weight: 500;
 }
-
-.text-bold {
+.font-bold {
   font-weight: 700;
 }
 
@@ -109,21 +71,18 @@
 .text-primary {
   color: var(--clr-primary);
 }
-
 .text-neutral-100 {
   color: var(--clr-neutral-100);
 }
-
 .text-neutral-900 {
   color: var(--clr-neutral-900);
 }
 
 /* Text Decoration */
-.text-decoration-none {
+.no-underline {
   text-decoration: none;
 }
-
-.text-decoration-underline {
+.underline {
   text-decoration: underline;
 }
 
@@ -131,7 +90,6 @@
 .text-center {
   text-align: center;
 }
-
 .text-right {
   text-align: right;
 }
@@ -141,124 +99,64 @@
   text-wrap: balance;
 }
 
-/* --------------------------------------------------
-   Color & Background Utilities
--------------------------------------------------- */
-/* Background */
+/* Background Utilities */
 .bg-primary {
   background-color: var(--clr-primary);
 }
-
 .bg-neutral-100 {
   background-color: var(--clr-neutral-100);
 }
-
 .bg-neutral-200 {
   background-color: var(--clr-neutral-200);
 }
-
 .bg-neutral-900 {
   background-color: var(--clr-neutral-900);
 }
 
-/* Background Image & Other */
-/* Example:
-   .bg-cover { background-size: cover; }
-   .bg-center { background-position: center; }
-*/
-
-/* --------------------------------------------------
-   Border & Outline Utilities
--------------------------------------------------- */
-/* Borders */
-/* Example:
-   .border { border: 1px solid #dee2e6; }
-   .border-none { border: none; }
-*/
-
-/* Border Radius */
-
+/* Border & Outline Utilities */
 .rounded-5 {
   border-radius: 5px;
 }
-
 .rounded-10 {
   border-radius: 10px;
 }
 .rounded-25 {
   border-radius: 25px;
 }
-
 .rounded-circle {
   border-radius: 50%;
 }
 
-/* Outline */
-/* Example:
-   .outline-none { outline: none; }
-*/
-
-/* --------------------------------------------------
-   Flexbox & Grid Utilities
--------------------------------------------------- */
+/* Flexbox & Grid Utilities */
 /* Flexbox */
 .flex-column {
   flex-direction: column;
 }
-
-.flex-space-between {
+.justify-between {
   justify-content: space-between;
 }
-
-.flex-end {
-  justify-content: flex-end;
+.justify-end {
+  justify-content: justify-end;
 }
-
-.flex-align-center {
+.items-center {
   align-items: center;
 }
-
-.flex-align-end {
-  align-items: flex-end;
+.items-end {
+  align-items: justify-end;
 }
-
-.flex-basis-50 {
+.basis-50 {
   flex-basis: 50%;
 }
 
 /* Grid */
-.grid-hmf {
-  grid-template-rows:
-    auto
-    1fr
-    auto;
+.grid-rows-hmf {
+  grid-template-rows: auto 1fr auto;
 }
-
-.grid-center {
+.justify-items-center {
   justify-items: center;
 }
 
-/* --------------------------------------------------
-   Effects & Animation Utilities
--------------------------------------------------- */
-/* Shadows & Opacity */
-/* Example:
-   .shadow { box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); }
-   .opacity-50 { opacity: 0.5; }
-*/
-
-/* Transforms & Transitions */
-/* Example:
-   .transition { transition: all 0.3s ease; }
-   .transform-scale { transform: scale(1.05); }
-*/
-
-/* Filters */
-/* Example:
-   .filter-blur { filter: blur(4px); }
-*/
-
-/* Badges */
+/* Badge Utility */
 .badge {
   padding-block: 0.5em;
   padding-inline: 2em;
@@ -268,20 +166,3 @@
   vertical-align: baseline;
   border-radius: 0.5rem;
 }
-
-/* --------------------------------------------------
-   Interaction & Visibility Utilities
--------------------------------------------------- */
-/* Visibility */
-/* Example:
-   .hidden { display: none; }
-   .visible { visibility: visible; }
-*/
-
-/* User Interaction */
-/* Example:
-   .cursor-pointer { cursor: pointer; }
-   .select-none { user-select: none; }
-*/
-
-/* States */

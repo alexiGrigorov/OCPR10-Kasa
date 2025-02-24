@@ -3,11 +3,11 @@ const Host = ({ host, className }) => {
   const nameParts = host.name.split(" ");
 
   return (
-    <div className={`d-flex flex-align-center flex-end ${className}`}>
+    <div className={`flex items-center justify-end ${className}`}>
       <div className="text-right">
         {nameParts.map((part, index) => (
           <div
-            className="text-primary text-medium font-size-host-name"
+            className="text-primary font-medium font-size-host-name"
             key={index}
           >
             {part}
@@ -17,7 +17,7 @@ const Host = ({ host, className }) => {
       <img
         src={host.picture}
         alt={host.name}
-        className={`m-is-3 rounded-circle host-picture`}
+        className={`mis-3 rounded-circle host-picture`}
       />
     </div>
   );

@@ -4,7 +4,7 @@ import ExpendableDetails from "../ui/ExpendableDetails";
 
 function About() {
   return (
-    <main className="max-w-screen m-i-auto p-i-pages d-flex flex-column gap-about">
+    <main className="max-w-screen w-full mi-auto p-i-pages flex flex-column gap-about">
       <AboutBanner />
       <ExpendableDetails
         title="Fiabilité"

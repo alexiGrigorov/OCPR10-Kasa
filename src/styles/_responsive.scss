@@ -1,0 +1,77 @@
+$breakpoint: 720px;
+
+.slogan-text {
+  margin-inline: auto;
+}
+
+.rentals-preview {
+  grid-template-columns: repeat(3, 1fr);
+  background-color: var(--clr-neutral-200);
+}
+
+.rental-overview {
+  flex-direction: row;
+}
+
+.rental-rating {
+  order: 1;
+}
+
+.rental-host {
+  order: 0;
+}
+
+.rental-profile {
+  flex-direction: column;
+}
+
+.rental-details {
+  flex-direction: row;
+}
+
+.secondary-logo {
+  width: 127px;
+  display: none;
+}
+
+.footer-text {
+  width: auto;
+}
+
+@media (max-width: #{$breakpoint}) {
+  .slogan-text {
+    margin-inline: 16px;
+  }
+  .rentals-preview {
+    grid-template-columns: 1fr;
+    background-color: var(--clr-neutral-100);
+  }
+
+  .rental-overview {
+    flex-direction: column;
+  }
+
+  .rental-rating {
+    order: 0;
+  }
+
+  .rental-host {
+    order: 1;
+  }
+
+  .rental-profile {
+    flex-direction: row;
+  }
+
+  .rental-details {
+    flex-direction: column;
+  }
+
+  .secondary-logo {
+    display: block;
+  }
+
+  .footer-text {
+    width: 127px;
+  }
+}

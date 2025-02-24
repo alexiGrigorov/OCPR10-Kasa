@@ -1,5 +1,3 @@
-$breakpoint: 720px;
-
 /* --------------------------------------------------
    pages
 -------------------------------------------------- */
@@ -8,17 +6,9 @@ $breakpoint: 720px;
 }
 
 /***    Home    ***/
-.slogan-text {
-  margin-inline: auto;
-}
 
 .font-size-slogan {
   font-size: clamp(24px, calc(2.2535vw + 15.5493px), 48px);
-}
-
-.rentals-preview {
-  grid-template-columns: repeat(3, 1fr);
-  background-color: var(--clr-neutral-200);
 }
 
 .p-rentals-preview {
@@ -34,15 +24,12 @@ $breakpoint: 720px;
 }
 
 /***    Rental    ***/
-.rental-overview {
-  flex-direction: row;
-}
 
 .h-rental-carousel {
   height: clamp(255px, calc(15.0235vw + 198.662px), 415px);
 }
 
-.m-bs-rental-summary {
+.m-bs-rental-overview {
   margin-block-start: clamp(15px, calc(1.4085vw + 9.7183px), 30px);
 }
 
@@ -60,18 +47,6 @@ $breakpoint: 720px;
 
 .font-size-rental-tag {
   font-size: clamp(10px, calc(0.3756vw + 8.5915px), 14px);
-}
-
-.rental-host {
-  order: 0;
-}
-
-.rental-rating {
-  order: 1;
-}
-
-.rental-profile {
-  flex-direction: column;
 }
 
 .font-size-host-name {
@@ -179,48 +154,4 @@ $breakpoint: 720px;
 
 .open-close-icon {
   width: clamp(24px, calc(0.7512vw + 21.1831px), 32px);
-}
-
-/****    SecondaryLogo    ****/
-.secondary-logo {
-  width: 127px;
-  display: none;
-}
-
-@media (max-width: #{$breakpoint}) {
-  .slogan-text {
-    margin-inline: 16px;
-  }
-  .rentals-preview {
-    grid-template-columns: 1fr;
-    background-color: var(--clr-neutral-100);
-  }
-
-  .rental-overview {
-    flex-direction: column;
-  }
-
-  .rental-rating {
-    order: 0;
-  }
-
-  .rental-host {
-    order: 1;
-  }
-
-  .rental-profile {
-    flex-direction: row;
-  }
-
-  .rental-details {
-    flex-direction: column;
-  }
-
-  .secondary-logo {
-    display: block;
-  }
-
-  .footer-text {
-    width: 127px;
-  }
 }

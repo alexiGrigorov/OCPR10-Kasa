@@ -6,7 +6,7 @@ function HomeBanner() {
     <Banner
       image={Img}
       name="slogan"
-      textClassName="text-neutral-100 text-bold font-size-slogan text-balance"
+      textClassName="text-neutral-100 font-bold font-size-slogan text-balance"
     >
       Chez vous, partout et ailleurs
     </Banner>

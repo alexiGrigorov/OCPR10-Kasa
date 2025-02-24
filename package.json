@@ -19,7 +19,7 @@
   "bugs": {
     "url": "https://github.com/alexiGrigorov/OCPR10-Kasa/issues"
   },
-  "homepage": "https://github.com/alexiGrigorov/OCPR10-Kasa",
+  "homepage": "https://alexiGrigorov.github.io/OCPR10-Kasa",
   "description": "",
   "devDependencies": {
     "@types/react": "^19.0.8",
