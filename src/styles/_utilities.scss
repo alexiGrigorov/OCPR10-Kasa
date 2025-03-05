@@ -29,6 +29,15 @@
 .absolute {
   position: absolute;
 }
+.z-0 {
+  z-index: 0;
+}
+.z-1 {
+  z-index: 1;
+}
+.z-2 {
+  z-index: 2;
+}
 
 /* Spacing Utilities */
 /* Margin */
@@ -40,6 +49,9 @@
 }
 
 /* Padding */
+.p-0 {
+  padding: 0;
+}
 .p-4 {
   padding: 1rem;
 }
@@ -112,8 +124,22 @@
 .bg-neutral-900 {
   background-color: var(--clr-neutral-900);
 }
+.bg-transparent {
+  background-color: transparent;
+}
+
+.bg-cover {
+  background-size: cover;
+}
+
+.bg-center {
+  background-position: center;
+}
 
 /* Border & Outline Utilities */
+.border-0 {
+  border-width: 0;
+}
 .rounded-5 {
   border-radius: 5px;
 }
@@ -138,11 +164,23 @@
 .justify-end {
   justify-content: justify-end;
 }
+.justify-center {
+  justify-content: center;
+}
 .items-center {
   align-items: center;
 }
 .items-end {
   align-items: justify-end;
+}
+.grow-0 {
+  flex-grow: 0;
+}
+.shrink-0 {
+  flex-shrink: 0;
+}
+.basis-full {
+  flex-basis: 100%;
 }
 .basis-50 {
   flex-basis: 50%;
@@ -154,6 +192,29 @@
 }
 .justify-items-center {
   justify-items: center;
+}
+
+/* Interactive Utilities */
+/* Cursor */
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/* User Select */
+.select-none {
+  user-select: none;
+}
+
+/* Effects */
+/* Opacity */
+.opacity-0 {
+  opacity: 0;
+}
+
+/* Filters */
+/* Brightness */
+.brightness-60 {
+  filter: brightness(60%);
 }
 
 /* Badge Utility */

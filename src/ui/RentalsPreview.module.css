@@ -1,5 +1,4 @@
 .rental-preview-card {
-  display: grid;
   grid-template-columns:
     [title-start img-start] 1fr
     [title-end] 1fr
@@ -15,7 +14,6 @@
 .rental-preview-card-title {
   grid-column: title-start / title-end;
   grid-row: title-start / title-end;
-  z-index: 1;
   font-size: 18px;
   margin-inline: 20px;
   margin-block: clamp(15px, calc(0.4695vw + 13.2394px), 20px);
@@ -24,9 +22,4 @@
 .rental-preview-card-img {
   grid-column: img-start / img-end;
   grid-row: img-start / img-end;
-  object-fit: cover;
-  z-index: 0;
-  width: 100%;
-  height: 100%;
-  filter: brightness(60%);
 }

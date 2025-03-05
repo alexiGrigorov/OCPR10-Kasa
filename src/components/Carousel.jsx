@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, Children } from "react";
+import { useState, useRef, useEffect, Children, cloneElement } from "react";
 import SvgIcon from "../components/SvgIcon";
 
 import ArrowLeft from "../assets/svgs/arrow_left.svg?react";
@@ -98,10 +98,10 @@ function Carousel({
   }
 
   return (
-    <div className={`${CSS.carousel} ${className}`}>
-      <div className={CSS.sliderWrapper}>
+    <div className={`${className} w-full overflow-hidden relative`}>
+      <div className={`h-full overflow-hidden`}>
         <div
-          className={CSS.slider}
+          className={`flex w-full h-full`}
           ref={sliderRef}
           style={{
             transform: `translateX(-${currentIndex * 100}%)`,
@@ -109,29 +109,34 @@ function Carousel({
           }}
         >
           {slides.map((slide, index) => (
-            <div key={index} className={CSS.slide}>
-              {slide}
+            <div
+              key={index}
+              className={`flex grow-0 shrink-0 basis-full justify-center items-center h-full`}
+            >
+              {cloneElement(slide, {
+                className: `w-full h-full object-cover ${slide.props.className || ""}`,
+              })}
             </div>
           ))}
         </div>
       </div>
       {/* Navigation arrows */}
       <button
-        className={CSS.arrowLeft}
+        className={`${CSS.arrowLeft} absolute z-2 p-0 border-0 bg-transparent cursor-pointer`}
         onClick={prevSlide}
         aria-label="Previous Slide"
       >
         <SvgIcon svg={<ArrowLeft />} color={color} />
       </button>
       <button
-        className={CSS.arrowRight}
+        className={`${CSS.arrowRight} absolute z-2 p-0 border-0 bg-transparent cursor-pointer`}
         onClick={nextSlide}
         aria-label="Next Slide"
       >
         <SvgIcon svg={<ArrowRight />} color={color} />
       </button>
       {/* Indicator */}
-      <div className={CSS.indicator} style={{ color }}>
+      <div className={`${CSS.indicator} absolute z-2`} style={{ color }}>
         {displayIndex}/{totalImages}
       </div>
     </div>

@@ -14,7 +14,10 @@ function Banner({
   };
 
   return (
-    <div className={CSS.banner} style={style}>
+    <div
+      className={`${CSS.banner} flex w-full items-center bg-cover bg-center`}
+      style={style}
+    >
       {children && (
         <div className={`${textClassName} ${camelToKebab(name)}-text`}>
           {children}

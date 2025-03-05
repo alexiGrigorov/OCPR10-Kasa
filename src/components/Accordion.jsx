@@ -54,11 +54,11 @@ const Accordion = ({
     <details
       ref={detailsRef}
       onToggle={handleToggle}
-      className={`${CSS.details} ${className}`}
+      className={`${className} overflow-hidden`}
     >
       <summary
         onClick={handleSummaryClick}
-        className={`${CSS.summary} ${titleClassName}`}
+        className={`${titleClassName} cursor-pointer select-none`}
         aria-expanded={isOpen}
         aria-controls={contentId}
       >
@@ -78,11 +78,7 @@ const Accordion = ({
         ref={contentRef}
         id={contentId}
         onAnimationEnd={handleAnimationEnd}
-        className={`
-          ${CSS.content} 
-          ${!isClosing && isOpen ? CSS.fadeInDown : isClosing ? CSS.fadeOutUp : ""} 
-          ${contentClassName}
-        `}
+        className={`${!isClosing && isOpen ? CSS.fadeInDown : isClosing ? CSS.fadeOutUp : ""} ${contentClassName} opacity-0 `}
       >
         {children}
       </div>

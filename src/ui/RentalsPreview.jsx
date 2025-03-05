@@ -1,17 +1,17 @@
 import { Link } from "react-router-dom";
 
-import CSS from "./RentalPreviewCard.module.css";
+import CSS from "./RentalsPreview.module.css";
 
 function RentalPreviewCard({ rental }) {
   return (
-    <div className={`${CSS.rentalPreviewCard} rounded-10`}>
+    <div className={`${CSS.rentalPreviewCard} grid rounded-10`}>
       <h3
-        className={`${CSS.rentalPreviewCardTitle} font-bold text-neutral-100`}
+        className={`${CSS.rentalPreviewCardTitle} z-1 font-bold text-neutral-100`}
       >
         {rental.title}
       </h3>
       <img
-        className={`${CSS.rentalPreviewCardImg} rounded-10`}
+        className={`${CSS.rentalPreviewCardImg} z-0 object-cover w-full h-full brightness-60 rounded-10`}
         src={rental.cover}
         alt={rental.title}
       />

@@ -1,22 +1,9 @@
-.details {
-  overflow: hidden;
-}
-
-.summary {
-  cursor: pointer;
-  user-select: none;
-}
-
 .icon {
   transition: transform 0.3s ease;
 }
 
 .open {
   transform: rotate(-180deg);
-}
-
-.content {
-  opacity: 0;
 }
 
 @keyframes fadeInDown {
