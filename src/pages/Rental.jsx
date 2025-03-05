@@ -44,7 +44,7 @@ function Rental() {
             ))}
           </div>
         </div>
-        <div className="rental-profile flex justify-between items-end gap-5">
+        <div className="rental-profile flex justify-between gap-5">
           <Host host={rental.host} className="rental-host" />
           <Rating rating={rental.rating} className="rental-rating" />
         </div>

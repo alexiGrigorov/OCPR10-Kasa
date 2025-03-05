@@ -23,6 +23,7 @@ $breakpoint: 720px;
 
 .rental-profile {
   flex-direction: column;
+  align-items: flex-end;
 }
 
 .rental-details {
@@ -60,6 +61,8 @@ $breakpoint: 720px;
   }
 
   .rental-profile {
+    margin-block-start: 16px;
+    align-items: center;
     flex-direction: row;
   }
 

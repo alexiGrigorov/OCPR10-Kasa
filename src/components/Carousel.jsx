@@ -23,10 +23,8 @@ function Carousel({
 
   const [currentIndex, setCurrentIndex] = useState(1);
   const [transitionEnabled, setTransitionEnabled] = useState(true);
-
   const [isTransitioning, setIsTransitioning] = useState(false);
 
-  // Auto-play
   useEffect(() => {
     const autoPlay = setInterval(() => {
       nextSlide();
@@ -34,7 +32,6 @@ function Carousel({
     return () => clearInterval(autoPlay);
   }, [autoPlayInterval]);
 
-  // Keyboard
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === "ArrowLeft") prevSlide();
@@ -84,7 +81,6 @@ function Carousel({
     }
   }, [transitionEnabled]);
 
-  // For the slide indicator
   let displayIndex = currentIndex;
   if (displayIndex === 0) displayIndex = totalImages;
   if (displayIndex === totalImages + 1) displayIndex = 1;
