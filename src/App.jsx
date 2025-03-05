@@ -31,12 +31,11 @@ const router = createBrowserRouter([
 ]);
 
 async function apiDataLoader() {
-  const response = await fetch("/public/services/api/logements.json");
+  const response = await fetch(
+    "https://raw.githubusercontent.com/alexiGrigorov/OCPR10-Kasa/refs/heads/main/public/services/api/logements.json",
+  );
 
-  if (
-    !response.ok ||
-    response.headers.get("content-type") !== "application/json"
-  ) {
+  if (!response.ok) {
     throwNotFoundResponse();
   }
 
