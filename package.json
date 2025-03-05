@@ -9,7 +9,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "publish": "git subtree push --prefix dist origin gh-pages"
+    "publish": "git push origin && git subtree push --prefix dist origin gh-pages"
   },
   "repository": {
     "type": "git",

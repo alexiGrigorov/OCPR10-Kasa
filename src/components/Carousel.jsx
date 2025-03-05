@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, Children, cloneElement } from "react";
+import { useState, useEffect, Children, cloneElement } from "react";
 import SvgIcon from "../components/SvgIcon";
 
 import ArrowLeft from "../assets/svgs/arrow_left.svg?react";
@@ -12,115 +12,110 @@ function Carousel({
   autoPlayInterval = 5000,
   className,
 }) {
-  // Convert children to an array of images.
   const images = Children.toArray(children);
   const totalImages = images.length;
 
-  // If only one image, render it without arrows/indicator.
   if (totalImages <= 1) {
     return <div className={`${CSS.carousel} ${className}`}>{images}</div>;
   }
 
-  // Create an infinite-loop effect by cloning the last and first images.
   const slides = [images[totalImages - 1], ...images, images[0]];
 
-  // currentIndex corresponds to the index in slides (starting at 1 for the first real image).
   const [currentIndex, setCurrentIndex] = useState(1);
-  // Control transition to allow instant jumps after slide animation.
   const [transitionEnabled, setTransitionEnabled] = useState(true);
-  const sliderRef = useRef(null);
 
-  // Auto-play: restart the timer every time currentIndex changes.
+  const [isTransitioning, setIsTransitioning] = useState(false);
+
+  // Auto-play
   useEffect(() => {
     const autoPlay = setInterval(() => {
       nextSlide();
     }, autoPlayInterval);
     return () => clearInterval(autoPlay);
-  }, [currentIndex, autoPlayInterval, totalImages]);
+  }, [autoPlayInterval]);
 
-  // Keyboard navigation: left/right arrow keys.
+  // Keyboard
   useEffect(() => {
     const handleKeyDown = (e) => {
-      if (e.key === "ArrowLeft") {
-        prevSlide();
-      } else if (e.key === "ArrowRight") {
-        nextSlide();
-      }
+      if (e.key === "ArrowLeft") prevSlide();
+      if (e.key === "ArrowRight") nextSlide();
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  });
+  }, []);
 
-  const nextSlide = () => {
+  function nextSlide() {
+    if (isTransitioning) return; // ignore if in the middle of an animation
+    setIsTransitioning(true);
     setCurrentIndex((prev) => prev + 1);
-  };
+  }
 
-  const prevSlide = () => {
+  function prevSlide() {
+    if (isTransitioning) return;
+    setIsTransitioning(true);
     setCurrentIndex((prev) => prev - 1);
+  }
+
+  // Use onTransitionEnd to handle wrap-around
+  const handleTransitionEnd = () => {
+    let newIndex = currentIndex;
+    if (currentIndex === totalImages + 1) {
+      newIndex = 1;
+      setTransitionEnabled(false); // turn off transition to "jump" instantly
+      setCurrentIndex(newIndex);
+    } else if (currentIndex === 0) {
+      newIndex = totalImages;
+      setTransitionEnabled(false);
+      setCurrentIndex(newIndex);
+    }
+    // Re-enable user clicks
+    setIsTransitioning(false);
   };
 
-  // Wrap-around logic when reaching cloned slides.
-  useEffect(() => {
-    if (currentIndex === totalImages + 1) {
-      // Moved to the clone of the first slide.
-      const timeout = setTimeout(() => {
-        setTransitionEnabled(false);
-        setCurrentIndex(1);
-      }, 500); // Must match the CSS transition duration.
-      return () => clearTimeout(timeout);
-    }
-    if (currentIndex === 0) {
-      // Moved to the clone of the last slide.
-      const timeout = setTimeout(() => {
-        setTransitionEnabled(false);
-        setCurrentIndex(totalImages);
-      }, 500);
-      return () => clearTimeout(timeout);
-    }
-  }, [currentIndex, totalImages]);
-
-  // Re-enable transition after an instant jump.
+  // Re-enable transition after instant jump
   useEffect(() => {
     if (!transitionEnabled) {
-      const timeout = setTimeout(() => {
-        setTransitionEnabled(true);
-      }, 50);
-      return () => clearTimeout(timeout);
+      // Turn transition back on after the DOM updates with the new index
+      // (two rAF calls or small setTimeout(…) to ensure the jump is rendered first)
+      const timer = requestAnimationFrame(() =>
+        requestAnimationFrame(() => setTransitionEnabled(true)),
+      );
+      return () => cancelAnimationFrame(timer);
     }
   }, [transitionEnabled]);
 
-  // Calculate display index (1-indexed for the indicator).
+  // For the slide indicator
   let displayIndex = currentIndex;
-  if (currentIndex === 0) {
-    displayIndex = totalImages;
-  } else if (currentIndex === totalImages + 1) {
-    displayIndex = 1;
-  }
+  if (displayIndex === 0) displayIndex = totalImages;
+  if (displayIndex === totalImages + 1) displayIndex = 1;
 
   return (
     <div className={`${className} w-full overflow-hidden relative`}>
-      <div className={`h-full overflow-hidden`}>
+      <div className="h-full overflow-hidden">
         <div
-          className={`flex w-full h-full`}
-          ref={sliderRef}
+          className="flex w-full h-full"
           style={{
             transform: `translateX(-${currentIndex * 100}%)`,
-            transition: transitionEnabled ? "transform 0.5s ease" : "none",
+            transition: transitionEnabled ? "transform 0.3s ease" : "none",
           }}
+          onTransitionEnd={handleTransitionEnd}
         >
           {slides.map((slide, index) => (
             <div
               key={index}
-              className={`flex grow-0 shrink-0 basis-full justify-center items-center h-full`}
+              className="flex grow-0 shrink-0 basis-full justify-center items-center h-full"
             >
               {cloneElement(slide, {
-                className: `w-full h-full object-cover ${slide.props.className || ""}`,
+                className: `w-full h-full object-cover ${
+                  slide.props.className || ""
+                }`,
               })}
             </div>
           ))}
         </div>
       </div>
-      {/* Navigation arrows */}
+
+      {/* Arrows */}
       <button
         className={`${CSS.arrowLeft} absolute z-2 p-0 border-0 bg-transparent cursor-pointer`}
         onClick={prevSlide}
@@ -135,6 +130,7 @@ function Carousel({
       >
         <SvgIcon svg={<ArrowRight />} color={color} />
       </button>
+
       {/* Indicator */}
       <div className={`${CSS.indicator} absolute z-2`} style={{ color }}>
         {displayIndex}/{totalImages}
