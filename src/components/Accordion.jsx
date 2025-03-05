@@ -11,6 +11,7 @@ const Accordion = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
+
   const contentId = useId();
   const detailsRef = useRef(null);
   const contentRef = useRef(null);
@@ -18,17 +19,12 @@ const Accordion = ({
   // Intercept the summary click when closing is triggered.
   const handleSummaryClick = (e) => {
     if (detailsRef.current.open && !isClosing) {
-      // Prevent the native close so we can animate.
       e.preventDefault();
-      // Immediately update state so that the icon loses its rotated state.
-      setIsOpen(false);
-      // Start the closing animation.
-      setIsClosing(true);
-      // Remove any opening animation class if present.
+
+      setIsOpen(false); // Immediately update state so that the icon loses its rotated state.
+      setIsClosing(true); // Start the closing animation.
+
       contentRef.current.classList.remove(CSS.fadeInDown);
-      // Force reflow to restart the animation.
-      void contentRef.current.offsetWidth;
-      // Apply the fadeOutUp animation.
       contentRef.current.classList.add(CSS.fadeOutUp);
     }
   };
@@ -45,7 +41,6 @@ const Accordion = ({
     if (isClosing) {
       contentRef.current.classList.remove(CSS.fadeOutUp);
       setIsClosing(false);
-      // Programmatically close the details element.
       detailsRef.current.open = false;
     }
   };
