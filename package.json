@@ -10,7 +10,7 @@
     "build": "vite build",
     "postbuild": "cp dist/index.html dist/404.html",
     "preview": "vite preview",
-    "deploy": "npm run build && git add -f dist && git commit -m 'Deploy commit' && git subtree push --prefix dist origin gh-pages"
+    "deploy": "npm run build && git add -f dist && git commit -m \"Deploy commit\" && git subtree push --prefix dist origin gh-pages"
   },
   "repository": {
     "type": "git",
