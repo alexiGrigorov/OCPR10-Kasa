@@ -79,6 +79,10 @@
   gap: clamp(113px, calc(2.4413vw + 103.8451px), 139px);
 }
 
+.m-b-error {
+  margin-block: clamp(113px, calc(2.4413vw + 103.8451px), 139px);
+}
+
 .font-size-error-title {
   font-size: clamp(96px, calc(18.0282vw + 28.3944px), 288px);
 }
@@ -127,7 +131,11 @@
 }
 
 .p-bs-footer {
-  padding-block-start: clamp(66px, calc(6.385vw + 42.0563px), 134px);
+  padding-block-start: 66px;
+}
+
+.secondary-logo {
+  width: 122px;
 }
 
 .p-be-footer {

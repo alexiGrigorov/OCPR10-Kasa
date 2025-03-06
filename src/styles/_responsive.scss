@@ -30,11 +30,6 @@ $breakpoint: 720px;
   flex-direction: row;
 }
 
-.secondary-logo {
-  width: 127px;
-  display: none;
-}
-
 .footer-text {
   width: auto;
 }
@@ -68,10 +63,6 @@ $breakpoint: 720px;
 
   .rental-details {
     flex-direction: column;
-  }
-
-  .secondary-logo {
-    display: block;
   }
 
   .footer-text {

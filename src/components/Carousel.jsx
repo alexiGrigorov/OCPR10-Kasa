@@ -16,7 +16,20 @@ function Carousel({
   const totalImages = images.length;
 
   if (totalImages <= 1) {
-    return <div className={`${CSS.carousel} ${className}`}>{images}</div>;
+    return (
+      <div className={`${className} w-full overflow-hidden relative`}>
+        <div className="h-full overflow-hidden">
+          <div className="flex w-full h-full">
+            {cloneElement(images[0], {
+              className: `w-full h-full object-cover ${
+                images[0].props.className || ""
+              }`,
+            })}
+          </div>
+        </div>
+      </div>
+    );
+    // <div className={`${CSS.carousel} ${className}`}>{images}</div>;
   }
 
   const slides = [images[totalImages - 1], ...images, images[0]];
